@@ -89,6 +89,7 @@ class Robinhood:
     def login(self,
               username,
               password,
+              device_token,
               mfa_code=None):
         """Save and test login info for Robinhood accounts
 
@@ -106,7 +107,8 @@ class Robinhood:
             'password': password,
             'username': self.username,
             'grant_type': 'password',
-            'client_id': self.client_id
+            'client_id': self.client_id,
+            "device_token": device_token,
         }
 
         if mfa_code:
